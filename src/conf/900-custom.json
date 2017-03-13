@@ -40,9 +40,6 @@
         "blacklist": "/etc/skylark/blacklist.json",
         "settings": "/home/%USERNAME%/.skylark/settings.json"
       }
-    },
-    "proxies": {
-      "http-bind-jabber/": null
     }
   },
   "client": {
