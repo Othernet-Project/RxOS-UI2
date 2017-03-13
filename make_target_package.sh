@@ -38,17 +38,26 @@ grunt
 mkdir target
 mkdir -p target/usr/share/www
 mkdir -p target/usr/lib/node_modules/ui2/server
+for i in Broadway Draw  MusicPlayer  ProcessViewer  Settings  Textpad
+do
+    rm -rf "dist/packages/default/$i"
+done
+rm dist/api.php
+
 cp -a dist/* target/usr/share/www
 rm target/usr/share/www/packages/*/*/api.*
 cp -a src/server/node/* target/usr/lib/node_modules/ui2/server
 cp src/server/*.json target/usr/lib/node_modules/ui2/
 
 # copy over api files
-for i in src/packages/default/*/api.js
+for i in src/packages/*/*/api.js
 do
     mkdir -p target/usr/share/$(dirname $i)
     cp "$i" target/usr/share/$(dirname $i)
 done
+
+rm -rf target/usr/share/src/packages/default/Broadway target/usr/share/src/packages/default/Settings
+rm -rf target/usr/lib/node_modules/ui2/server/handlers/demo target/usr/lib/node_modules/ui2/server/handlers/pam target/usr/lib/node_modules/ui2/server/handlers/mysql
 
 # copy over additional target code
 cp -a target_fs/* target/
