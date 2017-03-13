@@ -1,8 +1,8 @@
 {
-    "className": "ApplicationMessaging",
-    "name": "Messages",
+    "className": "ApplicationLogViewer",
+    "name": "Log Viewer",
     "mime": null,
-    "icon": "apps/messaging.png",
+    "icon": "apps/logviewer.png",
     "category": "utilities",
     "preload": [
         {
@@ -19,7 +19,7 @@
         }
     ],
     "type": "application",
-    "path": "default/Messaging",
+    "path": "skylark/LogViewer",
     "build": {},
-    "repo": "default"
+    "repo": "skylark"
 }

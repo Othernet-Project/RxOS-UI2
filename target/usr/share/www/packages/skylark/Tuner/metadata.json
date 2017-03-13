@@ -1,8 +1,8 @@
 {
-    "className": "ApplicationLogViewer",
-    "name": "Log Viewer",
+    "className": "ApplicationTuner",
+    "name": "Tuner",
     "mime": null,
-    "icon": "apps/logviewer.png",
+    "icon": "apps/tuner.png",
     "category": "utilities",
     "preload": [
         {
@@ -19,7 +19,7 @@
         }
     ],
     "type": "application",
-    "path": "default/LogViewer",
+    "path": "skylark/Tuner",
     "build": {},
-    "repo": "default"
+    "repo": "skylark"
 }

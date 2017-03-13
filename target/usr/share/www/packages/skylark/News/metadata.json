@@ -1,8 +1,8 @@
 {
-    "className": "ApplicationWhatsNew",
-    "name": "What's New",
-    "mime": null,
-    "icon": "apps/whatsnew.png",
+    "className": "ApplicationNews",
+    "name": "News",
+    "mime": [],
+    "icon": "apps/news.png",
     "category": "utilities",
     "preload": [
         {
@@ -12,14 +12,10 @@
         {
             "src": "scheme.html",
             "type": "scheme"
-        },
-        {
-            "type": "stylesheet",
-            "src": "combined.css"
         }
     ],
     "type": "application",
-    "path": "default/WhatsNew",
+    "path": "skylark/News",
     "build": {},
-    "repo": "default"
+    "repo": "skylark"
 }

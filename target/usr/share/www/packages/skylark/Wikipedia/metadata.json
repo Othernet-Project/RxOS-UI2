@@ -1,8 +1,8 @@
 {
-    "className": "ApplicationNetconf",
-    "name": "Network",
+    "className": "ApplicationWikireader",
+    "name": "Wikipedia",
     "mime": null,
-    "icon": "apps/wifi.png",
+    "icon": "apps/wikireader.png",
     "category": "utilities",
     "preload": [
         {
@@ -19,7 +19,7 @@
         }
     ],
     "type": "application",
-    "path": "default/Network",
+    "path": "skylark/Wikipedia",
     "build": {},
-    "repo": "default"
+    "repo": "skylark"
 }

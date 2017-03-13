@@ -1,8 +1,8 @@
 {
-    "className": "ApplicationTuner",
-    "name": "Tuner",
+    "className": "ApplicationMessaging",
+    "name": "Messages",
     "mime": null,
-    "icon": "apps/tuner.png",
+    "icon": "apps/messaging.png",
     "category": "utilities",
     "preload": [
         {
@@ -19,7 +19,7 @@
         }
     ],
     "type": "application",
-    "path": "default/Tuner",
+    "path": "skylark/Messaging",
     "build": {},
-    "repo": "default"
+    "repo": "skylark"
 }

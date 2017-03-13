@@ -34,7 +34,7 @@
         }
     ],
     "type": "application",
-    "path": "default/Reader",
+    "path": "skylark/Reader",
     "build": {},
-    "repo": "default"
+    "repo": "skylark"
 }

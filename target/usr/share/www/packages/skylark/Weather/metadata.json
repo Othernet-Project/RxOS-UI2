@@ -10,7 +10,7 @@
         }
     ],
     "type": "application",
-    "path": "default/Weather",
+    "path": "skylark/Weather",
     "build": {},
-    "repo": "default"
+    "repo": "skylark"
 }

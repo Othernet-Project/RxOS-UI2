@@ -264,6 +264,11 @@
     },
     "MIME": {
         "descriptions": {
+            "application/vnd.oasis.opendocument.presentation": "OpenDocument Presentation",
+            "application/vnd.oasis.opendocument.spreadsheet": "OpenDocument Spreadsheet",
+            "application/vnd.oasis.opendocument.text": "OpenDocument Text",
+            "application/epub+zip": "Epub",
+            "text/markdown": "Markdown",
             "image/bmp": "Bitmap Image",
             "image/gif": "GIF Image",
             "image/jpeg": "JPEG Image",
@@ -298,16 +303,16 @@
             "video/x-flv": "FLV Video",
             "video/x-matroska": "MKV Video",
             "application/x-ipkg": "Itsy Package",
-            "application/vnd.oasis.opendocument.presentation": "OpenDocument Presentation",
-            "application/vnd.oasis.opendocument.spreadsheet": "OpenDocument Spreadsheet",
-            "application/vnd.oasis.opendocument.text": "OpenDocument Text",
-            "application/epub+zip": "Epub",
-            "text/markdown": "Markdown",
             "osjs/document": "OS.js Document",
             "osjs/draw": "OS.js Image",
             "osjs/project": "OS.js Project"
         },
         "mapping": {
+            ".odp": "application/vnd.oasis.opendocument.presentation",
+            ".ods": "application/vnd.oasis.opendocument.spreadsheet",
+            ".odt": "application/vnd.oasis.opendocument.text",
+            ".epub": "application/epub+zip",
+            ".md": "text/plain",
             ".bmp": "image/bmp",
             ".css": "text/css",
             ".gif": "image/gif",
@@ -345,7 +350,6 @@
             ".mkv": "video/x-matroska",
             ".py": "application/x-python",
             ".xml": "text/xml",
-            ".md": "text/markdown",
             ".txt": "text/plain",
             ".log": "text/plain",
             ".doc": "text/plain",
@@ -356,10 +360,6 @@
             ".odoc": "osjs/document",
             ".odraw": "osjs/draw",
             ".oproj": "osjs/project",
-            ".odp": "application/vnd.oasis.opendocument.presentation",
-            ".ods": "application/vnd.oasis.opendocument.spreadsheet",
-            ".odt": "application/vnd.oasis.opendocument.text",
-            ".epub": "application/epub+zip",
             "default": "application/octet-stream"
         }
     },
