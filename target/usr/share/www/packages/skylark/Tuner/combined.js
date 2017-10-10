@@ -30,6 +30,7 @@
     scheme.render(this, 'TunerWindow', root);
 
     var beams = scheme.find(this, 'Beams');
+    var antennaTypes = scheme.find(this, 'AntennaType');
     var param_table = scheme.find(this, 'BeamParameters');
     var beamsave = scheme.find(this, 'BeamSave');
 
@@ -74,7 +75,7 @@
 
     }, 1000);
 
-    app._api('getTunerConf', null, (function (beams, param_table, beamsave) { return function(err, TunerConf) {
+    app._api('getTunerConf', null, (function (beams, param_table, beamsave, antennaTypes) { return function(err, TunerConf) {
 
         if ( err ) {
                 API.error(API._('ERR_GENERIC_APP_FMT', "Tuner"), API._('ERR_GENERIC_APP_REQUEST'), err);
@@ -84,6 +85,9 @@
         var Beams = TunerConf.beams;
         var selected = TunerConf.selectedBeam;
         var beams_list = Object.keys(Beams).map(function(v) { return Beams[v]; });
+        var AntennaTypes = TunerConf.antennaTypes;
+        var selectedAntenna = TunerConf.selectedAntenna;
+        var antennaTypes_list = Object.keys(AntennaTypes).map(function(v) { return AntennaTypes[v]; });
 
         var beamsOnChange = (function (Beams, param_table) { return function(ev) {
             param_table.clear();
@@ -94,12 +98,13 @@
             ]);
         }}) (Beams, param_table);
 
-        var beamsaveOnClick  = (function (Beams, beams, TunerConf) { return function() {
+        var beamsaveOnClick  = (function (Beams, beams, AntennaTypes, antennaTypes, TunerConf) { return function() {
             TunerConf.selectedBeam = beams.get('value');
+            TunerConf.selectedAntenna = antennaTypes.get('value');
             TunerConf.beams = Beams;
             // TODO: replace "console.log" with alert box
             app._api('setTunerConf', TunerConf , console.log);
-        }}) (Beams, beams, TunerConf);
+        }}) (Beams, beams, AntennaTypes, antennaTypes, TunerConf);
 
         beams.on('change', beamsOnChange);
         beams.add(beams_list);
@@ -108,10 +113,14 @@
         // populate param list on initial load
         beamsOnChange({ detail: beams.get('value')});
 
+        antennaTypes.add(antennaTypes_list);
+
+        antennaTypes.set('value', selectedAntenna);
+
         beamsave.on('click', beamsaveOnClick);
 
         // TODO: add support for custom beam
-    }}) (beams, param_table, beamsave));
+    }}) (beams, param_table, beamsave, antennaTypes));
 
     return root;
   };

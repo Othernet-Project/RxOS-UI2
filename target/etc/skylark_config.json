@@ -149,7 +149,18 @@
 				"symbolrate": "4200"
 			}
 		},
-		"selectedBeam": "emea"
+		"selectedBeam": "emea",
+        "antennaTypes": {
+            "active" : {
+                "label": "Active Antenna",
+                "value": "active"
+            },
+            "passive" : {
+                "label": "Passive Antenna",
+                "value": "passive"
+            }
+        },
+        "selectedAntenna" : "active"
 	},
 	"netConf": {
         "hostname" : "outernet",
