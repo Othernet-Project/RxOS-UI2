@@ -133,7 +133,7 @@
 			"emea": {
 				"label": "Europe, West Asia, Africa (25E)",
 				"value": "emea",
-				"freq": "1545.94",
+				"freq": "1546.25",
 				"symbolrate": "4200"
 			},
 			"americas": {
@@ -145,8 +145,8 @@
 			"custom": {
 				"label": "Custom",
 				"value": "custom",
-				"freq": "1545.94",
-				"symbolrate": "8400"
+				"freq": "1546.25",
+				"symbolrate": "4200"
 			}
 		},
 		"selectedBeam": "emea"
