@@ -10,7 +10,7 @@
       icon: metadata.icon,
       title: metadata.name,
       width: 400,
-      height: 200
+      height: 300
     }, app, scheme]);
 
     this.statusInterval = null;
@@ -35,6 +35,8 @@
     var beamsave = scheme.find(this, 'BeamSave');
 
     var tunerstatus = scheme.find(this, "Status");
+    var customFrequency = scheme.find(this, "Frequency");
+    var customBeamtype = scheme.find(this, "BeamType");
 
 
     this.statusInterval = setInterval(function() {
@@ -75,7 +77,7 @@
 
     }, 1000);
 
-    app._api('getTunerConf', null, (function (beams, param_table, beamsave, antennaTypes) { return function(err, TunerConf) {
+    app._api('getTunerConf', null, (function (beams, param_table, beamsave, antennaTypes, customFrequency, customBeamtype) { return function(err, TunerConf) {
 
         if ( err ) {
                 API.error(API._('ERR_GENERIC_APP_FMT', "Tuner"), API._('ERR_GENERIC_APP_REQUEST'), err);
@@ -94,17 +96,18 @@
             param_table.add( [
                 { value: 'label', columns: [ {label: "Region"}, {label: Beams[ev.detail]['label'] } ] },
                 { value: 'freq', columns: [ {label: "Frequency"}, {label: Beams[ev.detail]['freq'] } ] },
-                { value: 'symbolrate', columns: [ {label: "Symbol Rate"}, {label: Beams[ev.detail]['symbolrate'] } ] }
+                { value: 'beamtype', columns: [ {label: "Beam Type"}, {label: Beams[ev.detail]['beamtype'] } ] }
             ]);
         }}) (Beams, param_table);
 
-        var beamsaveOnClick  = (function (Beams, beams, AntennaTypes, antennaTypes, TunerConf) { return function() {
+        var beamsaveOnClick  = (function (Beams, beams, AntennaTypes, antennaTypes, customFrequency, customBeamtype, TunerConf) { return function() {
             TunerConf.selectedBeam = beams.get('value');
             TunerConf.selectedAntenna = antennaTypes.get('value');
-            TunerConf.beams = Beams;
+            TunerConf.beams.custom.freq = customFrequency.get('value');
+            TunerConf.beams.custom.beamtype = customBeamtype.get('value');
             // TODO: replace "console.log" with alert box
             app._api('setTunerConf', TunerConf , console.log);
-        }}) (Beams, beams, AntennaTypes, antennaTypes, TunerConf);
+        }}) (Beams, beams, AntennaTypes, antennaTypes, customFrequency, customBeamtype, TunerConf);
 
         beams.on('change', beamsOnChange);
         beams.add(beams_list);
@@ -117,10 +120,13 @@
 
         antennaTypes.set('value', selectedAntenna);
 
+        customFrequency.set('value', TunerConf['beams']['custom']['freq']);
+        customBeamtype.set('value', TunerConf['beams']['custom']['beamtype']);
+
         beamsave.on('click', beamsaveOnClick);
 
         // TODO: add support for custom beam
-    }}) (beams, param_table, beamsave, antennaTypes));
+    }}) (beams, param_table, beamsave, antennaTypes, customFrequency, customBeamtype));
 
     return root;
   };

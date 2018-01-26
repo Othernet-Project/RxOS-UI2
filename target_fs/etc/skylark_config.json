@@ -54,7 +54,7 @@
 			]
 		},
 		"tunerRestart": {
-			"cmd": "/etc/init.d/S90sdr",
+			"cmd": "/etc/init.d/S90tuner",
 			"args": [
 				"restart"
 			]
@@ -124,32 +124,20 @@
 	},
 	"tunerConf": {
 		"beams": {
-			"apac": {
-				"label": "Asia Pacific (144E)",
-				"value": "apac",
-				"freq": "1545.9525",
-				"symbolrate": "4200"
-			},
-			"emea": {
-				"label": "Europe, West Asia, Africa (25E)",
-				"value": "emea",
-				"freq": "1546.25",
-				"symbolrate": "4200"
-			},
 			"americas": {
-				"label": "Americas (98W)",
+				"label": "Americas",
 				"value": "americas",
-				"freq": "1539.8725",
-				"symbolrate": "4200"
+				"freq": "12.3456789",
+				"beamtype": "127"
 			},
 			"custom": {
 				"label": "Custom",
 				"value": "custom",
-				"freq": "1546.25",
-				"symbolrate": "4200"
+				"freq": "12.3456789",
+				"beamtype": "127"
 			}
 		},
-		"selectedBeam": "emea",
+		"selectedBeam": "americas",
         "antennaTypes": {
             "active" : {
                 "label": "Active Antenna",
