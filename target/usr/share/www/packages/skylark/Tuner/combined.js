@@ -45,31 +45,33 @@
         if(!err) {
           if(onddStatus) {
             tunerstatus.clear();
-            tunerstatus.add( [
-                { columns: [ {label: "SNR (dB)"}, {label: '' + onddStatus.snr} ] },
-                { columns: [ {label: "Lock"}, {label: onddStatus.lock? "yes" : "no" } ] },
-                { columns: [ {label: "Rssi (dBm) "}, {label: '' + onddStatus.rssi} ] },
-                { columns: [ {label: "APkMn Ratio"}, {label: '' + onddStatus.alg_pk_mn} ] },
-                { columns: [ {label: "Frequency (MHz)"}, {label: '' + onddStatus.freq} ] },
-                { columns: [ {label: "Freq Offset (Hz)"}, {label: '' + onddStatus.freq_offset} ] },
-                { columns: [ {label: "Symbol Error Rate (SER)"}, {label: '' + onddStatus.ser} ] },
-                { columns: [ {label: "Packets received"}, {label: '' + (onddStatus.crc_ok + onddStatus.crc_err) } ] },
-                { columns: [ {label: "Valid packets"}, {label: '' + onddStatus.crc_ok} ] },
-                { columns: [ {label: "Valid packets %"}, {label: '' + Math.round(100*onddStatus.crc_ok/ (onddStatus.crc_ok + onddStatus.crc_err)) } ] },
-                { columns: [ {label: "Packet Error Rate (PER)"}, {label: '' + Math.round(1000*onddStatus.crc_err/ (onddStatus.crc_ok + onddStatus.crc_err))/1000 } ] },
-                { columns: [
+            if (onddStatus.hasOwnProperty("stream")) tunerstatus.add( [ { columns: [ {label: "Stream"}, {label: '' + onddStatus.stream} ] } ] );
+            if (onddStatus.hasOwnProperty("snr")) tunerstatus.add( [ { columns: [ {label: "SNR (dB)"}, {label: '' + onddStatus.snr} ] } ] );
+            if (onddStatus.hasOwnProperty("lock")) tunerstatus.add( [ { columns: [ {label: "Lock"}, {label: onddStatus.lock? "yes" : "no" } ] } ] );
+            if (onddStatus.hasOwnProperty("rssi")) tunerstatus.add( [ { columns: [ {label: "Rssi (dBm) "}, {label: '' + onddStatus.rssi} ] } ] );
+            if (onddStatus.hasOwnProperty("alg_pk_mn")) tunerstatus.add( [ { columns: [ {label: "APkMn Ratio"}, {label: '' + onddStatus.alg_pk_mn} ] } ] );
+            if (onddStatus.hasOwnProperty("freq")) tunerstatus.add( [ { columns: [ {label: "Frequency (MHz)"}, {label: '' + onddStatus.freq} ] } ] );
+            if (onddStatus.hasOwnProperty("freq_offset")) tunerstatus.add( [ { columns: [ {label: "Freq Offset (Hz)"}, {label: '' + onddStatus.freq_offset} ] } ] );
+            if (onddStatus.hasOwnProperty("ser")) tunerstatus.add( [ { columns: [ {label: "Symbol Error Rate (SER)"}, {label: '' + onddStatus.ser} ] } ] );
+            if (onddStatus.hasOwnProperty("crc_err")) tunerstatus.add( [ { columns: [ {label: "Packets received"}, {label: '' + (onddStatus.crc_ok + onddStatus.crc_err) } ] } ] );
+            if (onddStatus.hasOwnProperty("crc_ok")) tunerstatus.add( [ { columns: [ {label: "Valid packets"}, {label: '' + onddStatus.crc_ok} ] } ] );
+            if (onddStatus.hasOwnProperty("crc_err")) tunerstatus.add( [ { columns: [ {label: "Valid packets %"}, {label: '' + Math.round(100*onddStatus.crc_ok/ (onddStatus.crc_ok + onddStatus.crc_err)) } ] } ] );
+            if (onddStatus.hasOwnProperty("crc_err")) tunerstatus.add( [ { columns: [ {label: "Packet Error Rate (PER)"}, {label: '' + Math.round(1000*onddStatus.crc_err/ (onddStatus.crc_ok + onddStatus.crc_err))/1000 } ] } ] );
+            if (onddStatus.hasOwnProperty("state")) tunerstatus.add( [ { columns: [
                     {label: "Lock State"},
                     {   label: [ "Search", "Signal Detect", "Const Lock", "Code Lock", "Frame Lock" ] [onddStatus.state] }
-                ] },
-                { columns: [ {label: "Transfers:"}, {label: ""} ] }
-            ] );
-            onddStatus.transfers.forEach(function(v) {
-                if (v.path) {
-                    var s = Math.round(100*v.block_received/v.block_count) + "%";
-                    if (v.complete) s = "Complete";
-                    tunerstatus.add([ { columns: [ {label: v.path}, {label: s} ] } ] );
-                }
-            });
+                ] } ] );
+            if (onddStatus.hasOwnProperty("transfers")) {
+                tunerstatus.add( [ { columns: [ {label: "Transfers:"}, {label: ""} ] } ] );
+
+                onddStatus.transfers.forEach(function(v) {
+                    if (v.path) {
+                        var s = Math.round(100*v.block_received/v.block_count) + "%";
+                        if (v.complete) s = "Complete";
+                        tunerstatus.add([ { columns: [ {label: v.path}, {label: s} ] } ] );
+                    }
+                });
+            }
           }
         } else
             clearInterval(self.statusInterval);
