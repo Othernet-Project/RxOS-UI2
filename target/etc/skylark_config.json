@@ -127,14 +127,14 @@
 			"americas": {
 				"label": "Americas",
 				"value": "americas",
-				"freq": "12.3456789",
-				"beamtype": "127"
+				"freq": "11.9024",
+				"beamtype": "247"
 			},
 			"custom": {
 				"label": "Custom",
 				"value": "custom",
-				"freq": "12.3456789",
-				"beamtype": "127"
+				"freq": "11.9024",
+				"beamtype": "247"
 			}
 		},
 		"selectedBeam": "americas",
