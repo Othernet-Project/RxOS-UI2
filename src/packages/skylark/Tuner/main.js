@@ -59,7 +59,7 @@
             if (onddStatus.hasOwnProperty("crc_err")) tunerstatus.add( [ { columns: [ {label: "Packet Error Rate (PER)"}, {label: '' + Math.round(1000*onddStatus.crc_err/ (onddStatus.crc_ok + onddStatus.crc_err))/1000 } ] } ] );
             if (onddStatus.hasOwnProperty("td")) tunerstatus.add( [ { columns: [ {label: "dT (ms)"}, {label: '' + onddStatus.td} ] } ] );
             if (onddStatus.hasOwnProperty("bitrate")) tunerstatus.add( [ { columns: [ {label: "Bitrate (bps)"}, {label: '' + onddStatus.bitrate} ] } ] );
-            if (onddStatus.hasOwnProperty("packetrate")) tunerstatus.add( [ { columns: [ {label: "Packets rate (pps)"}, {label: '' + onddStatus.packetrate} ] } ] );
+            if (onddStatus.hasOwnProperty("packetrate")) tunerstatus.add( [ { columns: [ {label: "Packet rate (pps)"}, {label: '' + onddStatus.packetrate} ] } ] );
             if (onddStatus.hasOwnProperty("state")) tunerstatus.add( [ { columns: [
                     {label: "Lock State"},
                     {   label: [ "Search", "Signal Detect", "Const Lock", "Code Lock", "Frame Lock" ] [onddStatus.state] }
