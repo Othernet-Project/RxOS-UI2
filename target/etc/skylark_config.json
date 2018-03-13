@@ -120,6 +120,10 @@
 		"uptime": {
 			"cmd": "uptime",
 			"args": []
+		},
+		"lnbstatus": {
+			"cmd": "i2cget",
+			"args": [ "-y", "0", "0x60", "0x01", "w"]
 		}
 	},
 	"tunerConf": {
