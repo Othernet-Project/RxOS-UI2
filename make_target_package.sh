@@ -38,7 +38,7 @@ grunt
 mkdir target
 mkdir -p target/usr/share/www
 mkdir -p target/usr/lib/node_modules/ui2/server
-for i in Broadway Draw  MusicPlayer  ProcessViewer  Settings  Writer
+for i in Broadway Draw ProcessViewer  Settings  Writer
 do
     rm -rf "dist/packages/default/$i"
 done
