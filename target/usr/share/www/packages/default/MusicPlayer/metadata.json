@@ -1,5 +1,5 @@
 {
-    "enabled": false,
+    "enabled": true,
     "className": "ApplicationMusicPlayer",
     "name": "Music Player",
     "names": {
