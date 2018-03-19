@@ -45,7 +45,11 @@
         if(!err) {
           if(onddStatus) {
             tunerstatus.clear();
-            if (onddStatus.hasOwnProperty("stream")) tunerstatus.add( [ { columns: [ {label: "Stream"}, {label: '' + (onddStatus.stream==0)? 'files' : (onddStatus.stream==1)? 'audio': 'other'} ] } ] );
+            var stream_s = "unknown";
+            if (onddStatus.stream == 0) { stream_s = "files"; }
+            else if (onddStatus.stream == 1) { stream_s = "audio"; }
+
+            if (onddStatus.hasOwnProperty("stream")) tunerstatus.add( [ { columns: [ {label: "Stream"}, {label: '' + stream_s } ] } ] );
             if (onddStatus.hasOwnProperty("snr")) tunerstatus.add( [ { columns: [ {label: "SNR (dB)"}, {label: '' + onddStatus.snr} ] } ] );
             if (onddStatus.hasOwnProperty("lock")) tunerstatus.add( [ { columns: [ {label: "Lock"}, {label: onddStatus.lock? "yes" : "no" } ] } ] );
             if (onddStatus.hasOwnProperty("rssi")) tunerstatus.add( [ { columns: [ {label: "Rssi (dBm) "}, {label: '' + onddStatus.rssi} ] } ] );
