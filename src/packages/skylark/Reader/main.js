@@ -133,6 +133,7 @@
         "video/ogv",
         //Audio
         "audio/mp3",
+        "audio/mpeg",
         "audio/oga",
         "audio/ogg",
         "audio/wav",
@@ -147,7 +148,7 @@
       ],
       filename: 'index.html',
       fileypes: ['html', 'htm', 'pdf', 'odt', 'ods', 'odp', 'ogv', 'mp4', 'webm', 'ogv',
-                  'mp3', 'oga', 'ogg', 'wav', 'vtt', 'srt', 'epub', 'md' ],
+                  'mp3', 'mpeg', 'oga', 'ogg', 'wav', 'vtt', 'srt', 'epub', 'md' ],
       readData: false
     }]);
   }
