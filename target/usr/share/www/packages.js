@@ -199,54 +199,6 @@
         "build": {},
         "repo": "default"
     },
-    "default/MusicPlayer": {
-        "enabled": true,
-        "className": "ApplicationMusicPlayer",
-        "name": "Music Player",
-        "names": {
-            "bg_BG": "Музикален плеър",
-            "de_DE": "Musikspieler",
-            "es_ES": "Music Player",
-            "fr_FR": "Lecteur de musique",
-            "it_IT": "Lettore Musicale",
-            "ko_KR": "뮤직 플레이어",
-            "nl_NL": "Audio speler",
-            "no_NO": "Musikkspiller",
-            "pl_PL": "Odtwarzacz muzyki",
-            "ru_RU": "Аудиоплеер",
-            "sk_SK": "Prehrávač hudby",
-            "tr_TR": "Muzik Çalar",
-            "vi_VN": "Nghe nhạc"
-        },
-        "mime": [
-            "^audio",
-            "osjs\\/playlist"
-        ],
-        "category": "multimedia",
-        "icon": "status/audio-volume-high.png",
-        "singular": true,
-        "compability": [
-            "audio"
-        ],
-        "preload": [
-            {
-                "type": "javascript",
-                "src": "combined.js"
-            },
-            {
-                "type": "stylesheet",
-                "src": "combined.css"
-            },
-            {
-                "src": "scheme.html",
-                "type": "scheme"
-            }
-        ],
-        "type": "application",
-        "path": "default/MusicPlayer",
-        "build": {},
-        "repo": "default"
-    },
     "default/Preview": {
         "className": "ApplicationPreview",
         "name": "Preview",

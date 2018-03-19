@@ -9,6 +9,7 @@
     "ForceDisable": [
       "default/Broadway",
       "default/Draw",
+      "default/MusicPlayer",
       "default/ProcessViewer",
       "default/Settings",
       "default/Writer"
