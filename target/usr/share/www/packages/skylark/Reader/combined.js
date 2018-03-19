@@ -56,7 +56,7 @@
     if ( this._scheme ) {
 
       // TODO: nasty hack, fix this
-      var base = "/packages/default/Reader/";
+      var base = "/packages/skylark/Reader/";
 
       var viewerjs = function(f,u) {
           return base + "ViewerJS/index.html#/" + encodeURIComponent(u);
