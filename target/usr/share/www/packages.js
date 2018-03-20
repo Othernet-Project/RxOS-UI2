@@ -429,6 +429,7 @@
             "video\\/webm",
             "video\\/ogv",
             "audio\\/mp3",
+            "audio\\/mpeg",
             "audio\\/oga",
             "audio\\/ogg",
             "audio\\/wav",
