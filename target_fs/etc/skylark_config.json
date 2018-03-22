@@ -128,11 +128,11 @@
 	},
 	"tunerConf": {
 		"beams": {
-			"americas": {
-				"label": "Americas",
-				"value": "americas",
-				"freq": "11.9024",
-				"beamtype": "228"
+			"k": {
+				"label": "K",
+				"value": "k",
+				"freq": "12558.5",
+				"beamtype": "229"
 			},
 			"custom": {
 				"label": "Custom",
@@ -141,7 +141,7 @@
 				"beamtype": "247"
 			}
 		},
-		"selectedBeam": "americas",
+		"selectedBeam": "k",
         "antennaTypes": {
             "active" : {
                 "label": "Active Antenna",
