@@ -49,6 +49,7 @@
             if (onddStatus.stream == 0) { stream_s = "files"; }
             else if (onddStatus.stream == 1) { stream_s = "audio"; }
 
+            //tuner
             if (onddStatus.hasOwnProperty("stream")) tunerstatus.add( [ { columns: [ {label: "Stream"}, {label: '' + stream_s } ] } ] );
             if (onddStatus.hasOwnProperty("snr")) tunerstatus.add( [ { columns: [ {label: "SNR (dB)"}, {label: '' + onddStatus.snr} ] } ] );
             if (onddStatus.hasOwnProperty("lock")) tunerstatus.add( [ { columns: [ {label: "Lock"}, {label: onddStatus.lock? "yes" : "no" } ] } ] );
@@ -69,6 +70,12 @@
                     {label: "Lock State"},
                     {   label: [ "Search", "Signal Detect", "Const Lock", "Code Lock", "Frame Lock" ] [onddStatus.state] }
                 ] } ] );
+
+            // audio
+            if (onddStatus.hasOwnProperty("num_frames")) tunerstatus.add( [ { columns: [ {label: "Audio Frames Received:"}, {label: '' + onddStatus.num_frames } ] } ] );
+            if (onddStatus.hasOwnProperty("num_frames_played")) tunerstatus.add( [ { columns: [ {label: "Audio Frames Played:"}, {label: '' + onddStatus.num_frames_played } ] } ] );
+
+            // ondd
             if (onddStatus.hasOwnProperty("transfers")) {
                 tunerstatus.add( [ { columns: [ {label: "Transfers:"}, {label: ""} ] } ] );
 
@@ -80,8 +87,6 @@
                     }
                 });
             }
-            if (onddStatus.hasOwnProperty("num_frames")) tunerstatus.add( [ { columns: [ {label: "Audio Frames Received:"}, {label: '' + onddStatus.num_frames } ] } ] );
-            if (onddStatus.hasOwnProperty("num_frames_played")) tunerstatus.add( [ { columns: [ {label: "Audio Frames Played:"}, {label: '' + onddStatus.num_frames_played } ] } ] );
 
           }
         } else
