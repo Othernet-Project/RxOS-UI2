@@ -56,7 +56,7 @@
             if (onddStatus.hasOwnProperty("alg_pk_mn")) tunerstatus.add( [ { columns: [ {label: "APkMn Ratio"}, {label: '' + onddStatus.alg_pk_mn} ] } ] );
             if (onddStatus.hasOwnProperty("freq")) tunerstatus.add( [ { columns: [ {label: "Frequency (MHz)"}, {label: '' + onddStatus.freq} ] } ] );
             if (onddStatus.hasOwnProperty("freq_offset")) tunerstatus.add( [ { columns: [ {label: "Freq Offset (Hz)"}, {label: '' + onddStatus.freq_offset} ] } ] );
-            if (onddStatus.hasOwnProperty("freq_correction")) tunerstatus.add( [ { columns: [ {label: "Freq Offset (post-AFC) (Hz)"}, {label: '' + (onddStatus.freq_correction - onddStatus.freq_offset)} ] } ] );
+            if (onddStatus.hasOwnProperty("freq_offset_uc")) tunerstatus.add( [ { columns: [ {label: "Freq Offset (post-AFC) (Hz)"}, {label: '' + onddStatus.freq_offset_uc } ] } ] );
             if (onddStatus.hasOwnProperty("ser")) tunerstatus.add( [ { columns: [ {label: "Symbol Error Rate (SER)"}, {label: '' + onddStatus.ser} ] } ] );
             if (onddStatus.hasOwnProperty("crc_err")) tunerstatus.add( [ { columns: [ {label: "Packets received"}, {label: '' + (onddStatus.crc_ok + onddStatus.crc_err) } ] } ] );
             if (onddStatus.hasOwnProperty("crc_ok")) tunerstatus.add( [ { columns: [ {label: "Valid packets"}, {label: '' + onddStatus.crc_ok} ] } ] );
@@ -80,6 +80,9 @@
                     }
                 });
             }
+            if (onddStatus.hasOwnProperty("num_frames")) tunerstatus.add( [ { columns: [ {label: "Audio Frames Received:"}, {label: '' + onddStatus.num_frames } ] } ] );
+            if (onddStatus.hasOwnProperty("num_frames_played")) tunerstatus.add( [ { columns: [ {label: "Audio Frames Played:"}, {label: '' + onddStatus.num_frames_played } ] } ] );
+
           }
         } else
             clearInterval(self.statusInterval);
