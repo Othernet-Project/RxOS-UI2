@@ -90,7 +90,7 @@
         "text/markdown" : showdown
       };
 
-      var src = encodeURIComponent(url);
+      var src = url;
 
       if (mime_map[file.mime]) {
         src = mime_map[file.mime](file, url);
