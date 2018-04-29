@@ -8,16 +8,16 @@ do
     then
         if [[ "$argc" -eq 1 ]]
         then
-            echo "${i//./_}"=\"$(jq -r ".$i" /mnt/conf/etc/skylark_config.json)\"
-        else
             echo $(jq -r ".$i" /mnt/conf/etc/skylark_config.json)
+        else
+            echo "${i//./_}"=\"$(jq -r ".$i" /mnt/conf/etc/skylark_config.json)\"
         fi
     else
         if [[ "$argc" -eq 1 ]]
         then
-            echo "${i//./_}"=\"$(jq -r ".$i"  /etc/skylark_config.json)\"
-        else
             echo $(jq -r ".$i"  /etc/skylark_config.json)
+        else
+            echo "${i//./_}"=\"$(jq -r ".$i"  /etc/skylark_config.json)\"
         fi
     fi
 done
