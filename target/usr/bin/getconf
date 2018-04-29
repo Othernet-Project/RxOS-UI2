@@ -1,19 +1,12 @@
-#! /usr/bin/node
+#!/bin/sh
 
-//  this is _VERY_ slow. use if with care.
-// given just one query key, it returns the value
-// if more than one query key is given, it returns key=value lines, which can be eval-ed in shell.
-// the keys have their seperator dots replaced with underscores(_) as dots don't work for shell vars
-
-var r = require('skylark_config');
-
-var q = process.argv.slice(2);
-
-if (q.length>1) {
-    q.forEach(function(k) {
-        r.getConf(k, function(v) { console.log(k.replace(/\./g,'_') + '="' + v + '"' ); })
-    });
-} else {
-    r.getConf(q[0], console.log);
-}
+for i in "$@"
+do
+    if [[ $(jq -r ".overRides | any(inside(\"$i\"))"  /etc/skylark_config.json) == "true" -a -e /mnt/conf/etc/skylark_config.json ]]
+    then
+        echo "${i//./_}"=\"$(jq -r ".$i" /mnt/conf/etc/skylark_config.json)\"
+    else
+        echo "${i//./_}"=\"$(jq -r ".$i"  /etc/skylark_config.json)\"
+    fi
+done
 
