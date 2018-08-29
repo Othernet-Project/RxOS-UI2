@@ -25,8 +25,8 @@
         "reportingInterval": 300,
         "collectionInterval": 1000,
         "idInterface": "wlan0",
-        "userAgent": "Outernet Telemetry Client - HttpLink/2.1",
-        "endPoint": "https://telemetry.outernet.is/Ach3Airie3dahrie9cho/statusdata"
+        "userAgent": "Othernet Telemetry Client - HttpLink/2.1",
+        "endPoint": "https://telemetry.othernet.is/Ach3Airie3dahrie9cho/statusdata"
     },
 	"cmds": {
 		"whatsNew": {
@@ -168,7 +168,7 @@
 			}
 		},
 		"ap": {
-			"ssid": "Outernet",
+			"ssid": "Othernet",
 			"hidden": false,
 			"selectedCountry": null,
 			"selectedChannel": "6",
