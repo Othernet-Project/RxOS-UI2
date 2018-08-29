@@ -48,6 +48,7 @@
             var stream_s = "unknown";
             if (onddStatus.stream == 0) { stream_s = "files"; }
             else if (onddStatus.stream == 1) { stream_s = "audio"; }
+            else if (onddStatus.stream == 2) { stream_s = "raudio"; }
 
             //tuner
             if (onddStatus.hasOwnProperty("stream")) tunerstatus.add( [ { columns: [ {label: "Stream"}, {label: '' + stream_s } ] } ] );
