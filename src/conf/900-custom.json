@@ -49,7 +49,7 @@
         "backgroundColor": "#089bd2",
         "fontFamily": "Ariel",
         "background": "image-fill",
-        "icon": "outernet.png",
+        "icon": "othernet.png",
         "panels": [
           {
             "options": {

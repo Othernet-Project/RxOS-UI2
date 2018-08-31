@@ -2389,7 +2389,7 @@
 
     var sel = document.createElement('li');
     sel.title = API._('LBL_APPLICATIONS');
-    sel.innerHTML = '<img alt="" src="' + API.getIcon(wm.getSetting('icon') || 'outernet.png') + '" />';
+    sel.innerHTML = '<img alt="" src="' + API.getIcon(wm.getSetting('icon') || 'othernet.png') + '" />';
     sel.className = 'corewm-panel-button-centered';
     sel.setAttribute('role', 'button');
     sel.setAttribute('data-label', 'OS.js Application Menu');

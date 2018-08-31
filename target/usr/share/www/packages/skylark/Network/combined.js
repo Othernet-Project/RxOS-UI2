@@ -64,7 +64,7 @@
         var netsaveOnClick  = (function (scheme, me, netConf) { return function() {
             // mode tab
             netConf['hostname'] = scheme.find(me, 'Hostname').get('value');
-            netConf['OuternetPassword'] = scheme.find(me, 'OuternetPassword').get('value');
+            netConf['OthernetPassword'] = scheme.find(me, 'OthernetPassword').get('value');
             netConf['mode'] = scheme.find(me, 'Mode').get('value');
 
             // ap tab

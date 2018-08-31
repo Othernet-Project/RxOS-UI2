@@ -29,7 +29,7 @@
             "desktopMargin": 5,
             "wallpaper": "osjs:///themes/wallpapers/wallpaper.png",
             "desktopPath": "desktop:///",
-            "icon": "outernet.png",
+            "icon": "othernet.png",
             "backgroundColor": "#089bd2",
             "fontFamily": "Ariel",
             "background": "image-fill",

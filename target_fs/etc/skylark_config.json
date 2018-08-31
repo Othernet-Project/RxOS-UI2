@@ -155,7 +155,7 @@
         "selectedAntenna" : "active"
 	},
 	"netConf": {
-        "hostname" : "outernet",
+        "hostname" : "othernet",
 		"mode": "ap",
 		"modes": {
 			"ap": {
