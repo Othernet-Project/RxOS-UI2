@@ -55,6 +55,9 @@
     var root = Window.prototype.init.apply(this, arguments);
     scheme.render(this, 'AboutWindow', root);
     root.getElementsByTagName('img')[0].src = API.getApplicationResource(app, 'about.png');
+    root.getElementsByTagName('audio')[0].src = window.location.protocol + "//" + window.location.host + ":8090/othernet.ogg";
+    root.getElementsByClassName('audio_fix')[0].href = window.location.protocol + "//" + window.location.host + ":8090/othernet.ogg";
+
     return root;
   };
 
