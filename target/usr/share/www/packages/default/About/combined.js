@@ -55,8 +55,10 @@
     var root = Window.prototype.init.apply(this, arguments);
     scheme.render(this, 'AboutWindow', root);
     root.getElementsByTagName('img')[0].src = API.getApplicationResource(app, 'about.png');
-    root.getElementsByTagName('audio')[0].src = window.location.protocol + "//" + window.location.host + ":8090/othernet.mp3";
-    root.getElementsByClassName('audio_fix')[0].href = window.location.protocol + "//" + window.location.host + ":8090/othernet.mp3";
+    root.getElementsById('oggsrc').src = window.location.protocol + "//" + window.location.host + ":8090/othernet.ogg";
+    root.getElementsById('mp3src').src = window.location.protocol + "//" + window.location.host + ":8090/othernet.mp3";
+    root.getElementsById('oggsrc_href').href = window.location.protocol + "//" + window.location.host + ":8090/othernet.ogg";
+    root.getElementsById('mp3src_href').href = window.location.protocol + "//" + window.location.host + ":8090/othernet.mp3";
 
     return root;
   };
