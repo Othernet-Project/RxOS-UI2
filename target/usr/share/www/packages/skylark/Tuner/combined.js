@@ -75,6 +75,7 @@
             // audio
             if (onddStatus.hasOwnProperty("num_frames")) tunerstatus.add( [ { columns: [ {label: "Audio Frames Received:"}, {label: '' + onddStatus.num_frames } ] } ] );
             if (onddStatus.hasOwnProperty("num_frames_played")) tunerstatus.add( [ { columns: [ {label: "Audio Frames Played:"}, {label: '' + onddStatus.num_frames_played } ] } ] );
+            if (onddStatus.hasOwnProperty("audio_bitrate")) tunerstatus.add( [ { columns: [ {label: "Audio bitrate(bps):"}, {label: '' + onddStatus.audio_bitrate } ] } ] );
 
             // ondd
             if (onddStatus.hasOwnProperty("transfers")) {
