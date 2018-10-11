@@ -8,7 +8,7 @@
             callback(false, r);
         });
     } else {
-       callback("You are not allowed to use this App/API");
+       callback("You are not allowed to use this App/API. Log in as admin.");
     }
 
   };
@@ -19,7 +19,7 @@
             callback(false, r);
         });
     } else {
-       callback("You are not allowed to use this App/API");
+       callback("You are not allowed to use this App/API. Log in as admin.");
     }
   };
 
