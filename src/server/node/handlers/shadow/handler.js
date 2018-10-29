@@ -35,7 +35,7 @@
 // See doc/handler-shadow.txt
 //
 
-(function(_passwd, _userid) {
+(function(_userid) {
   'use strict';
 
   /////////////////////////////////////////////////////////////////////////////
@@ -62,7 +62,6 @@
               child.stdout.on('end', function() { callBack (0,resp) });
           }
 
-          //_passwd.checkPass(login.username, login.password, function(err, res) {
           run_cmd('/usr/bin/checkpass.sh', [ login.username, login.password ] , function(err, res) {
 
             if ( !err && res !== 'passwordCorrect' ) {
@@ -97,6 +96,5 @@
   };
 
 })(
-  require('passwd-linux'),
   require('userid')
 );
