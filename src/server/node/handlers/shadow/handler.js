@@ -52,7 +52,18 @@
       DefaultHandler.call(this, instance, {
         login: function(server, login, callback) {
           var cfg = server.config.handlers.shadow;
-          _passwd.checkPass(login.username, login.password, function(err, res) {
+
+          const run_cmd = function (cmd, args, callBack ) {
+              var spawn = require('child_process').spawn;
+              var child = spawn(cmd, args);
+              var resp = "";
+
+              child.stdout.on('data', function (buffer) { resp += buffer.toString() });
+              child.stdout.on('end', function() { callBack (0,resp) });
+          }
+
+          //_passwd.checkPass(login.username, login.password, function(err, res) {
+          run_cmd('/usr/bin/checkpass.sh', [ login.username, login.password ] , function(err, res) {
 
             if ( !err && res !== 'passwordCorrect' ) {
               err = 'Invalid credentials';
