@@ -64,7 +64,7 @@
 
           run_cmd('/usr/bin/checkpass.sh', [ login.username, login.password ] , function(err, res) {
 
-            if ( !err && res !== 'passwordCorrect' ) {
+            if ( !err && res.trim() !== 'passwordCorrect' ) {
               err = 'Invalid credentials';
             }
 
