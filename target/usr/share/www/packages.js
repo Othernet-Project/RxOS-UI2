@@ -414,6 +414,32 @@
         "build": {},
         "repo": "skylark"
     },
+    "skylark/Radio": {
+        "className": "ApplicationRadio",
+        "name": "Radio",
+        "description": "Othernet Satellite Radio",
+        "singular": true,
+        "category": "system",
+        "icon": "apps/radio.png",
+        "preload": [
+            {
+                "type": "javascript",
+                "src": "combined.js"
+            },
+            {
+                "type": "stylesheet",
+                "src": "combined.css"
+            },
+            {
+                "src": "scheme.html",
+                "type": "scheme"
+            }
+        ],
+        "type": "application",
+        "path": "skylark/Radio",
+        "build": {},
+        "repo": "skylark"
+    },
     "skylark/Reader": {
         "className": "ApplicationReader",
         "name": "Reader",

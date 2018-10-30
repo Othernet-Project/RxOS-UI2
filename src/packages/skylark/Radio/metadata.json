@@ -1,0 +1,22 @@
+{
+  "className": "ApplicationRadio",
+  "name": "Radio",
+  "description": "Othernet Satellite Radio",
+  "singular": true,
+  "category": "system",
+  "icon": "apps/radio.png",
+  "preload": [
+    {
+      "src": "main.js",
+      "type": "javascript"
+    },
+    {
+      "src": "main.css",
+      "type": "stylesheet"
+    },
+    {
+      "src": "scheme.html",
+      "type": "scheme"
+    }
+  ]
+}

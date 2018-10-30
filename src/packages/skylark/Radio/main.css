@@ -1,0 +1,14 @@
+.ApplicationRadioWindow application-window-content {
+  background-color : #fff;
+  color : #000;
+  text-align : center;
+}
+.ApplicationRadioWindow application-window-content > div > div {
+  padding : 10px;
+}
+.ApplicationRadioWindow h1 {
+  margin : 0;
+  padding : 10px;
+  font-size : 40px;
+}
+
