@@ -10,6 +10,7 @@
             "rssi": "avg",
             "freq": "avg",
             "freq_offset": "avg",
+            "freq_offset_uc": "avg",
             "ser": "last",
             "crc_ok": "last",
             "crc_err": "last",
@@ -20,12 +21,18 @@
             "version": "last",
             "platform": "last",
             "macid": "last",
-            "lanip": "last"
+            "lanip": "last",
+            "stream": "hist",
+            "td": "hist",
+            "packetrate": "avg",
+            "bitrate": "avg",
+            "audio_bitrate": "avg",
+            "uptime": "last"
         },
         "reportingInterval": 300,
         "collectionInterval": 1000,
         "idInterface": "wlan0",
-        "userAgent": "Othernet Telemetry Client - HttpLink/2.1",
+        "userAgent": "Othernet Telemetry Client - HttpLink/3.0",
         "endPoint": "https://telemetry.othernet.is/Ach3Airie3dahrie9cho/statusdata"
     },
 	"cmds": {
