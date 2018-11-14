@@ -14,7 +14,6 @@
             "ser": "last",
             "crc_ok": "last",
             "crc_err": "last",
-            "alg_pk_mn": "avg",
             "state": "hist",
             "transfers": "last",
             "count": "sum",
