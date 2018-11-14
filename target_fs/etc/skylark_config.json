@@ -22,7 +22,7 @@
             "macid": "last",
             "lanip": "last",
             "stream": "hist",
-            "td": "hist",
+            "td": "list",
             "packetrate": "avg",
             "bitrate": "avg",
             "audio_bitrate": "avg",
