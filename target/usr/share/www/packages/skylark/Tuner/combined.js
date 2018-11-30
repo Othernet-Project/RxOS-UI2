@@ -31,6 +31,7 @@
 
     var beams = scheme.find(this, 'Beams');
     var antennaTypes = scheme.find(this, 'AntennaType');
+    var lnbs = scheme.find(this, 'LNBS');
     var param_table = scheme.find(this, 'BeamParameters');
     var beamsave = scheme.find(this, 'BeamSave');
 
@@ -110,6 +111,9 @@
         var AntennaTypes = TunerConf.antennaTypes;
         var selectedAntenna = TunerConf.selectedAntenna;
         var antennaTypes_list = Object.keys(AntennaTypes).map(function(v) { return AntennaTypes[v]; });
+        var LNBs = TunerConf.LNBs;
+        var selectedLNB = TunerConf.selectedLNB;
+        var LNB_list = Object.keys(LNBs).map(function(v) { return LNBs[v]; });
 
         var beamsOnChange = (function (Beams, param_table) { return function(ev) {
             param_table.clear();
@@ -139,6 +143,10 @@
         antennaTypes.add(antennaTypes_list);
 
         antennaTypes.set('value', selectedAntenna);
+
+        lnbs.add(LNB_list);
+
+        lnbs.set('value', selectedLNB);
 
         customFrequency.set('value', TunerConf['beams']['custom']['freq']);
         customBeamtype.set('value', TunerConf['beams']['custom']['beamtype']);

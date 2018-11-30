@@ -158,7 +158,18 @@
                 "value": "passive"
             }
         },
-        "selectedAntenna" : "active"
+        "selectedAntenna" : "active",
+        "LNBs": {
+            "mk1" : {
+                "label": "Mark 1",
+                "value": "mk1"
+            },
+            "ps002" : {
+                "label": "PS 002",
+                "value": "ps002"
+            }
+        },
+        "selectedLNB" : "mk1"
 	},
 	"netConf": {
         "hostname" : "othernet",
@@ -199,5 +210,5 @@
 			"password": ""
 		}
 	},
-    "overRides" : [ "netConf.hostname", "netConf.mode", "netConf.sta", "netConf.ap", "tunerConf.selectedBeam", "tunerConf.beams.custom", "tunerConf.selectedAntenna" ]
+    "overRides" : [ "netConf.hostname", "netConf.mode", "netConf.sta", "netConf.ap", "tunerConf.selectedBeam", "tunerConf.beams.custom", "tunerConf.selectedAntenna" , "tunerConf.selectedLNB" ]
 }
