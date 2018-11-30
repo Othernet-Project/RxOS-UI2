@@ -127,6 +127,7 @@
         var beamsaveOnClick  = (function (Beams, beams, AntennaTypes, antennaTypes, customFrequency, customBeamtype, TunerConf) { return function() {
             TunerConf.selectedBeam = beams.get('value');
             TunerConf.selectedAntenna = antennaTypes.get('value');
+            TunerConf.selectedLNB = lnbs.get('value');
             TunerConf.beams.custom.freq = customFrequency.get('value');
             TunerConf.beams.custom.beamtype = customBeamtype.get('value');
             // TODO: replace "console.log" with alert box
