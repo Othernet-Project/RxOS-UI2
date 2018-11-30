@@ -161,12 +161,12 @@
         "selectedAntenna" : "active",
         "LNBs": {
             "mk1" : {
-                "label": "Mark 1",
+                "label": "Maverick 1",
                 "value": "mk1"
             },
-            "ps002" : {
-                "label": "PS 002",
-                "value": "ps002"
+            "sy118u" : {
+                "label": "Shenyang KI-118U",
+                "value": "sy118u"
             }
         },
         "selectedLNB" : "mk1"
