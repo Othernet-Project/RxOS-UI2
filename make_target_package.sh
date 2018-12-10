@@ -65,6 +65,9 @@ cp -a target_fs/* target/
 # fix dist name
 sed -i 's/"dist"/"www"/' target/usr/lib/node_modules/ui2/packages.json
 
+# generate the packages api call output statically
+jq '.www | with_entries(.value += { "scope": "system"}) | { "result": (.), "error" : false} ' target/usr/lib/node_modules/ui2/packages.json > target/usr/share/www/packages.json
+
 # generate list of modules required on target
 # this is required by buildroot
 mod=$(grep -r "require("  src/server/node target_fs/usr/lib/node_modules | cut -d : -f 2 | tr ',' '\n' | sed "s/.*require('\([a-z_A-Z0-9-]*\)').*/\1/"  | grep -v '^ ' | sort | uniq | tr '\n' ' ')
