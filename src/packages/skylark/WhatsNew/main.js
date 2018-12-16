@@ -37,19 +37,24 @@
     ]);
 
     var populate = function () {
-        app._api('runTask', 'whatsNew', function(err, value) {
+        app._api('scandir_r', null, function(err, value) {
             if (!err) {
-                var lines=value.split('\n');
-                var entries=lines.map(function(v) {
-                    var v_parts = v.split(",");
-                    if (!(v_parts[0]*1000)) return [];
-                    var d = new Date(v_parts[0]*1000);
+
+                var files = value;
+                var sortBymtime = function (a,b) {
+                        return (Date.parse(b.mtime) - Date.parse(a.mtime));
+                };
+
+                files.sort(sortBymtime);
+                var entries=files.map(function(v) {
+                    if (v.filename[0]=='.') return []; // skip dot files
+                    var d = new Date.parse(v.mtime);
                     return {
                         value: v ,
                         columns: [
                             { label: d.toLocaleDateString() },
                             { label: d.toLocaleTimeString() },
-                            { label: v_parts.slice(1).join(",") }
+                            { label: v.path.slice(v.path.indexOf('/')+1) }
                         ]
                     };
                 });
