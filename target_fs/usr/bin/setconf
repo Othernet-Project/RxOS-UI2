@@ -1,7 +1,0 @@
-#! /usr/bin/node
-
-// this is VERY slow. do not overuse it.
-
-r = require("skylark_config")
-
-r.setConf(process.argv[2],process.argv[3],console.log);
