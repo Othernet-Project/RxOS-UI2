@@ -37,7 +37,7 @@
     ]);
 
     var populate = function () {
-        app._api('scandir_r', null, function(err, value) {
+        app._api('scandir_r', 'downloads:///', function(err, value) {
             if (!err) {
 
                 var files = value;
