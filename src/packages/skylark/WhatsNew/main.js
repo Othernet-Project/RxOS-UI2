@@ -48,7 +48,7 @@
                 files.sort(sortBymtime);
                 var entries=files.map(function(v) {
                     if (v.filename[0]=='.') return []; // skip dot files
-                    var d = Date.parse(v.mtime);
+                    var d = new Date(v.mtime);
                     return {
                         value: v ,
                         columns: [
