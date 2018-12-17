@@ -41,13 +41,18 @@
             if (!err) {
 
                 var files = value;
+                // filter dummy entries - they don't have ctime;
+                files = files.filter(function(v) {
+                    return v.ctime;
+                });
+
                 var sortBymtime = function (a,b) {
                         return (Date.parse(b.mtime) - Date.parse(a.mtime));
                 };
 
                 files.sort(sortBymtime);
+
                 var entries=files.map(function(v) {
-                    if (v.filename[0]=='.') return []; // skip dot files
                     var d = new Date(v.mtime);
                     return {
                         value: v ,
