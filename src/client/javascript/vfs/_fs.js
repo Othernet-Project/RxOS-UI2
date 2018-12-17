@@ -369,6 +369,7 @@
     requestWrapper([item.path, 'scandir', [item]], 'ERR_VFSMODULE_SCANDIR_FMT', function(error, result) {
       // Makes sure aliased mounts have correct paths and entries
       if ( alias && result ) {
+        result = result.filter(function(iter) { return iter.ctime });
         result = result.map(function(iter) {
           var niter = new VFS.File(iter);
           var str = iter.path.replace(/\/?$/, '');
