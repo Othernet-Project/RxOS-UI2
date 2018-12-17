@@ -54,7 +54,7 @@
                         columns: [
                             { label: d.toLocaleDateString() },
                             { label: d.toLocaleTimeString() },
-                            { label: v.path.slice(v.path.indexOf('/')+1) }
+                            { label: v.path.slice(v.path.indexOf('/')+4) }
                         ]
                     };
                 });
