@@ -11394,6 +11394,7 @@ window.OSjs = window.OSjs || {};
       }
       return true;
     }
+    list = list.filter(function(iter) { return iter.ctime});
     var result = list.filter(function(iter) {
       if ( (iter.filename === '..' && options.backlink === false) || !filterFile(iter) ) {
         return false;
