@@ -39,18 +39,11 @@
     });
 
     var items = [
+        { value: 'diags',  columns: [ { label: 'Diagnostics'} ] },
         { value: 'mounts', columns: [ { label: 'Mounted Filesystems'} ] },
         { value: 'dmesg' , columns: [ { label: 'Kernel Messages'} ] },
         { value: 'syslog', columns: [ { label: 'System Messages'} ] },
-        { value: 'motd',   columns: [ { label: 'Motd'} ] },
-        { value: 'top',    columns: [ { label: 'Running Processes'} ] },
-        { value: 'systemStatus', columns: [ { label: 'System Status'} ] },
-        { value: 'platformRelease', columns: [ { label: 'Release Info'} ] },
-        { value: 'ifconfig', columns: [ { label: 'Ifconfig'} ] },
-        { value: 'ipaddr', columns: [ { label: 'Network Addresses'} ] },
-        { value: 'iproute', columns: [ { label: 'Network Routes'} ] },
-        { value: 'uptime', columns: [ { label: 'System Uptime'} ] },
-        { value: 'lnbstatus', columns: [ { label: 'LNB Status'} ] }
+        { value: 'top',    columns: [ { label: 'Running Processes'} ] }
     ];
 
     var side = this._find('SideView');

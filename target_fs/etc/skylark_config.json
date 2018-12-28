@@ -35,6 +35,10 @@
         "endPoint": "https://telemetry.othernet.is/Ach3Airie3dahrie9cho/statusdata"
     },
 	"cmds": {
+		"diags": {
+			"cmd": "/usr/bin/diags.sh",
+			"args": []
+		},
 		"whatsNew": {
 			"cmd": "/usr/bin/whatsnew.sh",
 			"args": [
