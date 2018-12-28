@@ -8,17 +8,7 @@ num_lines="$2"
 shift
 shift
 
-
-find "$@" -mtime "-$num_days" -type f | while read l
-do
-    fname=$(basename "$l")
-    dname=$(dirname "$l")
-    srcname=$(basename "$dname")
-    d=$(echo "$fname" | cut -d - -f 2- | cut -d . -f 1 | tr _ ' ' )
-    ts=$(date -d "$d" +%s)
-    while read a
-    do
-        echo "$a" | tr -d '\n' | sed -e "s/^/$ts,$srcname,/"
-        echo
-    done < "$l"
-done | sort -nr -t , -k 1 | head -n "$num_lines"
+find "$@" -name '*.txt' -print0 | \
+xargs -0 awk '{FS="/"; split(FILENAME,s); f=substr(s[length(s)],10,16); gsub("[_:-]"," ",f); print mktime(f " 00") "," s[length(s)-1] "," $0}'  | \
+sort -nr -t , -k 1 | \
+head -n "$num_lines"
