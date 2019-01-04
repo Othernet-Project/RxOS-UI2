@@ -43,6 +43,13 @@ else
   echo "[FAIL] Local audio is not running."
 fi
 
+if ps | grep -q "lcdui"
+then
+  echo "[ OK ] LCD UI is running"
+else
+  echo "[FAIL] LCD UI is not running. You should reboot."
+fi
+
 if ps | grep -q "ondd"
 then
   echo "[ OK ] File service is running"
