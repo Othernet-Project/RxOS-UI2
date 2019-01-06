@@ -12,7 +12,7 @@ echo
 ip -4 addr  show wlan0
 echo
 
-if ps | grep -q "tuner.bin"
+if pgrep "tuner.bin"
 then
   echo "[ OK ] Tuner is running"
 else
@@ -29,28 +29,28 @@ then
   echo
 fi
 
-if ps | grep -q "audio_service"
+if pgrep "audio_service"
 then
   echo "[ OK ] Audio service is running"
 else
   echo "[FAIL] Audio service is not running. You should reboot"
 fi
 
-if ps | grep -q "aplay"
+if pgrep "aplay"
 then
   echo "[ OK ] Local audio is running"
 else
   echo "[FAIL] Local audio is not running."
 fi
 
-if ps | grep -q "lcdui"
+if pgrep "lcdui"
 then
   echo "[ OK ] LCD UI is running"
 else
   echo "[FAIL] LCD UI is not running. You should reboot."
 fi
 
-if ps | grep -q "ondd"
+if pgrep "ondd"
 then
   echo "[ OK ] File service is running"
 else
