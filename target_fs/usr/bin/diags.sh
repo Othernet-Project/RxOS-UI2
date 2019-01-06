@@ -29,7 +29,7 @@ then
   echo
 fi
 
-if pgrep "audio_service" > /dev/null
+if pgrep "audio_server" > /dev/null
 then
   echo "[ OK ] Audio service is running"
 else
