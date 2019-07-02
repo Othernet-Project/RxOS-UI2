@@ -173,7 +173,7 @@
                 "value": "sy011001"
             }
         },
-        "selectedLNB" : "mk1"
+        "selectedLNB" : "sy011001"
 	},
 	"netConf": {
         "hostname" : "othernet",
