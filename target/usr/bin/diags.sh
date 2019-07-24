@@ -43,11 +43,14 @@ else
   echo "[FAIL] Local audio is not running."
 fi
 
-if pgrep "lcdui" > /dev/null
+if grep -q 'BOARDID=e' /proc/cmdline
 then
-  echo "[ OK ] LCD UI is running"
-else
-  echo "[FAIL] LCD UI is not running. You should reboot."
+  if pgrep "lcdui" > /dev/null
+  then
+    echo "[ OK ] LCD UI is running"
+  else
+    echo "[FAIL] LCD UI is not running. You should reboot."
+  fi
 fi
 
 if pgrep "ondd" > /dev/null
