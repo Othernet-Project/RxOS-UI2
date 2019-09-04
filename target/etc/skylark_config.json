@@ -144,6 +144,12 @@
 				"freq": "11.9024",
 				"beamtype": "228"
 			},
+			"eu": {
+				"label": "EU",
+				"value": "eu",
+				"freq": "11.681242",
+				"beamtype": "164"
+			},
 			"custom": {
 				"label": "Custom",
 				"value": "custom",
