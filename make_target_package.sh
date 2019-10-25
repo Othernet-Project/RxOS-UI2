@@ -80,5 +80,8 @@ echo you may need to make the following links:
 echo '   ln -s $PWD/target_fs/etc/skylark_config.json /etc/skylark_config.json'
 #echo '   ln -s $PWD/target_fs/usr/lib/node_modules/skylark_config.js node_modules/skylark_config.js'
 
+# fix version tag
+sed -i 's/Skylark placeholder/Skylark 5.7/' target/usr/share/www/index.html target/usr/share/www/settings.js
+
 #echo run with:
 #echo 'node target/usr/lib/node_modules/ui2/server/server.js www --root  $PWD/target/usr/share/'
