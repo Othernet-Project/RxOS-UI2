@@ -171,11 +171,11 @@
         "selectedAntenna" : "active",
         "LNBs": {
             "mk1" : {
-                "label": "Maverick 1",
+                "label": "Single LO: 10750 MHz",
                 "value": "mk1"
             },
             "sy011001" : {
-                "label": "Othernet Dual Band",
+                "label": "Dual LO: 9750/10600 MHz",
                 "value": "sy011001"
             }
         },
